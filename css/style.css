@@ -83,13 +83,10 @@
         width: 50%;
     }
     .derecha,.izquierda{
-        width: 50%;
+        width: 60%;
         justify-content: flex-start;
         align-items: flex-start;
         font-size: 14px;
-    }
-    .form .derecha button {
-        margin:auto;
     }
     
 }
