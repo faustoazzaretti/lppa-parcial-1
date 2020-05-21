@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LPPA-PARCIAL</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+        <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="./js/app.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="form">
+                <div class="izquierda">
+                    <label>
+                        <h1>Registro:</h1>
+                    </label>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email">
+                    <label for="edad">Edad:</label>
+                    <input type="text" id="edad" name="edad"><br>
+                    <form action="">
+                        <label for="edad">Sexo:</label><br>
+                        <input type="radio" id="masculino" name="gender" value="masculino">
+                        <label for="male">Masculino</label><br>
+                        <input type="radio" id="femenino" name="gender" value="femenino">
+                        <label for="female">Femenino</label><br>
+                        <input type="radio" id="otro" name="gender" value="otro">
+                        <label for="other">Otro</label>
+                    </form>
+                </div>
+                <div class="derecha">
+                    <label for="temaInteres">Tema de interes:</label>
+                    <form>
+                        <input type="checkbox" id="musica" name="interes" value="musica">
+                        <label for="musica"> Musica</label><br>
+                        <input type="checkbox" id="deportes" name="interes" value="deportes">
+                        <label for="deportes"> Deportes</label><br>
+                        <input type="checkbox" id="juegos" name="interes" value="juegos">
+                        <label for="juegos"> Juegos</label><br>
+                        <input type="checkbox" id="tecnologia" name="interes" value="tecnologia">
+                        <label for="tecnologia"> Tecnologia</label><br><br>
+                    </form>
+                    <div class="select-pais">
+                        <label for="temaInteres">Pais:</label>
+                        <select name="cars" id="cars">
+                            <option value="argentina">Argentina</option>
+                            <option value="chile">Chile</option>
+                            <option value="brasil">Brasil</option>
+                            <option value="uruguay">Uruguay</option>
+                        </select>
+                    </div>
+                    <label for="temaInteres">Comentarios:</label>
+                    <textarea id="comentarios" rows="2" cols="20"></textarea>
+                    <button type="submit">Enviar</button>
+                </div>
+            </div>
+    </body>
+</html>
