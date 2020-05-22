@@ -8,6 +8,10 @@ var emailError = null;
 var expesion = null;
 var text = "hola"
 var x = null;
+var man = null;
+var woman = null;
+var other = null;
+var sexoError = null;
 
 function myFunction() {
     var x, text;
@@ -24,6 +28,18 @@ function myFunction() {
     document.getElementById("edadError").innerHTML = text;
 }
 
+function checkRadio() {
+    men = document.getElementById("masculino").checked
+    women = document.getElementById("femenino").checked
+    other = document.getElementById("otro").checked
+    textS = sexoError = document.getElementById("sexoError")
+    if (men === false && women === false && other === false) {
+        textS.innerHTML = "Debe seleccionar un sexo"
+        false
+    } else {
+        textS.innerHTML = ""
+    }
+}
 
 var sendForm = function () {
 
@@ -38,6 +54,7 @@ var sendForm = function () {
         apellidoUsuarioError.innerHTML = ''
     }
     myFunction()
+    check()
     return false
 }
 
@@ -55,5 +72,9 @@ window.onload = function () {
     apellidoUsuarioError = document.getElementById('apellidoError')
     email = this.document.getElementById('email')
     x = document.getElementById("edad").value;
+    man = document.getElementById("masculino").checked
+    women = document.getElementById("femenino").checked
+    other = document.getElementById("otro").checked;
+
 }
 
