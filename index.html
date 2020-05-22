@@ -19,13 +19,18 @@
                         <h1>Registro:</h1>
                     </label>
                     <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre">
+                    <input id="nombre" type="text">
+                    <p id="nombreError" class="error"></p>
                     <label for="apellido">Apellido:</label>
-                    <input type="text" id="apellido" name="apellido">
+                    <input id="apellido" type="text">
+                    <p id="apellidoError" class="error"></p>
                     <label for="email">Email:</label>
-                    <input type="text" id="email" name="email">
+                    <input id="email" type="text" name="email">
+                    <h2 id='result'></h2>
+                    <p id="emailError" class="error"></p>
                     <label for="edad">Edad:</label>
-                    <input type="text" id="edad" name="edad"><br>
+                    <input id="edad" type="text" name="edad">
+                    <p id="edadError" class="error"></p>
                     <form action="">
                         <label for="edad">Sexo:</label><br>
                         <input type="radio" id="masculino" name="gender" value="masculino">
@@ -59,7 +64,7 @@
                     </div>
                     <label for="temaInteres">Comentarios:</label>
                     <textarea id="comentarios" rows="2" cols="20"></textarea>
-                    <button type="submit">Enviar</button>
+                    <button id="enviar" type="submit" onclick='return enviarFormulario();'>Enviar</button>
                 </div>
             </div>
     </body>
