@@ -12,6 +12,11 @@ var man = null;
 var woman = null;
 var other = null;
 var sexoError = null;
+var musica = null;
+var deportes = null;
+var juegos = null;
+var tecnologia = null;
+var textInteresError = null;
 
 function myFunction() {
     var x, text;
@@ -41,6 +46,20 @@ function checkRadio() {
     }
 }
 
+function checkCheckbox() {
+    musica = document.getElementById("musica").checked
+    deportes = document.getElementById("deportes").checked
+    juegos = document.getElementById("juegos").checked
+    tecnologia = document.getElementById("tecnologia").checked
+
+    textInteresError = document.getElementById("interesError")
+    if (musica === false && deportes === false && juegos === false && tecnologia === false) {
+        textInteresError.innerHTML = "Debe seleccionar un interes"
+    } else {
+        textInteresError.innerHTML = ""
+    }
+}
+
 var sendForm = function () {
 
     if (nombreUsuario.value === "") {
@@ -54,7 +73,8 @@ var sendForm = function () {
         apellidoUsuarioError.innerHTML = ''
     }
     myFunction()
-    check()
+    checkRadio()
+    checkCheckbox()
     return false
 }
 
