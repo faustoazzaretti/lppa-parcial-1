@@ -31,6 +31,16 @@ function validarEdad() {
     }
 }
 
+function validateEmail() {
+    var email = document.getElementById('email').value;
+    var pattern = /^[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)*@[a-z0-9]+(\-[a-z0-9]+)*(\.[a-z0-9]+(\-[a-z0-9]+)*)*\.[a-z]{2,4}$/;
+    if (pattern.test(email)) {
+        emailError.innerHTML = ""
+    } else {
+        emailError.innerHTML = "Formato de email incorrecto"
+    }
+}
+
 function validarRadioButtons() {
     men = document.getElementById("masculino").checked
     women = document.getElementById("femenino").checked
@@ -80,6 +90,7 @@ var enviarFormulario = function () {
     validarEdad()
     validarRadioButtons()
     validarCheckboxs()
+    validateEmail()
     return false
 }
 
@@ -93,6 +104,7 @@ window.onload = function () {
     edad = document.getElementById("edad").value;
     errorEdad = document.getElementById('edadError')
     email = document.getElementById('email').value
+    emailError = document.getElementById('emailError')
     elegir = document.getElementById('pais').value
     elegirError = document.getElementById('elegirError')
     comentarios = document.getElementById('comentarios')
