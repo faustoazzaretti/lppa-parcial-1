@@ -21,6 +21,43 @@ var comentariosError = null;
 var elegirError = null
 var elegir = null;
 
+function mostrarDatos() {
+    var email = document.getElementById('email').value;
+    men = document.getElementById("masculino").checked
+    women = document.getElementById("femenino").checked
+    other = document.getElementById("otro").checked
+    musica = document.getElementById("musica").checked
+    deportes = document.getElementById("deportes").checked
+    juegos = document.getElementById("juegos").checked
+    tecnologia = document.getElementById("tecnologia").checked
+    console.log('Nombre: ' + nombreUsuario.value)
+    console.log('Apellido: ' + apellidoUsuario.value)
+    console.log('Email :' + email)
+    console.log('Edad : ' + edad)
+    if (men === true) {
+        console.log('Sexo: Masculino')
+    } else if (women === true) {
+        console.log('Sexo: Femenino')
+    } else {
+        console.log('Sexo:  Otro')
+    }
+    console.log('Temas de interes:')
+    if (musica === true) {
+        console.log("Musica")
+    }
+    if (deportes === true) {
+        console.log('Deportes')
+    }
+    if (juegos === true) {
+        console.log('Juegos')
+    }
+    if (tecnologia === true) {
+        console.log('Tecnologia')
+    }
+    console.log('Comentarios: ' + comentarios.value)
+
+}
+
 function validarEdad() {
     edad = document.getElementById("edad").value;
 
@@ -71,14 +108,18 @@ function validarCheckboxs() {
 
 
 var enviarFormulario = function () {
-
-    if (nombreUsuario.value === "") {
-        nombreUsuarioError.innerHTML = "Campo Incompleto."
+    console.clear()
+    if (nombreUsuario.value.length < 3 && nombreUsuario.value.length > 0) {
+        nombreUsuarioError.innerHTML = "Nombre demasiado corto."
+    } else if (nombreUsuario.value.length === 0) {
+        nombreUsuarioError.innerHTML = 'Campo Incompleto'
     } else {
         nombreUsuarioError.innerHTML = ''
     }
-    if (apellidoUsuario.value === "") {
-        apellidoUsuarioError.innerHTML = "Campo Incompleto."
+    if (apellidoUsuario.value.length < 3 && apellidoUsuario.value.length > 0) {
+        apellidoUsuarioError.innerHTML = "Apellido demasiado corto."
+    } else if (nombreUsuario.value.length === 0) {
+        apellidoUsuarioError.innerHTML = 'Campo Incompleto'
     } else {
         apellidoUsuarioError.innerHTML = ''
     }
@@ -91,6 +132,7 @@ var enviarFormulario = function () {
     validarRadioButtons()
     validarCheckboxs()
     validateEmail()
+    mostrarDatos()
     return false
 }
 
