@@ -80,7 +80,6 @@ var enviarFormulario = function () {
     validarEdad()
     validarRadioButtons()
     validarCheckboxs()
-    checkCountry()
     return false
 }
 
