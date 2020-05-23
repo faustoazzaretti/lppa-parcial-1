@@ -54,19 +54,21 @@
                         <label for="juegos"> Juegos</label><br>
                         <input type="checkbox" id="tecnologia" name="interes" value="tecnologia">
                         <label for="tecnologia"> Tecnologia</label><br><br>
-                        <p id="interesError" class="error"></p>
+                        <p id="interesError" class="error"></p><br>
                     </form>
                     <div class="select-pais">
-                        <label for="temaInteres">Pais:</label>
-                        <select name="cars" id="cars">
-                            <option value="argentina">Argentina</option>
-                            <option value="chile">Chile</option>
-                            <option value="brasil">Brasil</option>
-                            <option value="uruguay">Uruguay</option>
+                        <label for="paises">Pais:</label>
+                        <select name="paises" id="pais">
+                            <option id="argentina" value="argentina">Argentina</option>
+                            <option id="chile" value="chile">Chile</option>
+                            <option id="brasil" value="brasil">Brasil</option>
+                            <option id="uruguay" value="uruguay">Uruguay</option>
                         </select>
+                        <p id="elegirError" class="error"></p>
                     </div>
                     <label for="temaInteres">Comentarios:</label>
                     <textarea id="comentarios" rows="2" cols="20"></textarea>
+                    <p id="comentariosError" class="error"></p>
                     <button id="enviar" type="submit" onclick='return enviarFormulario();'>Enviar</button>
                 </div>
             </div>

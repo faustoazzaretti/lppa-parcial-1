@@ -71,8 +71,11 @@
 }
 
 .error {
+    justify-content: center;
+    margin: 2px;
+    
     font-size: 10px;
-    color: #F00;
+    color: yellow;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -89,9 +92,9 @@
         width: 50%;
     }
     .derecha,.izquierda{
-        width: 60%;
-        justify-content: flex-start;
-        align-items: flex-start;
+        width: 80%;
+        justify-content: center;
+        align-items: center;
     }
     
 }

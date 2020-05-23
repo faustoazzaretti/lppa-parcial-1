@@ -6,8 +6,7 @@ var apellidoUsuarioError = null;
 var email = null;
 var emailError = null;
 var expesion = null;
-var text = "hola"
-var x = null;
+var edad = null;
 var man = null;
 var woman = null;
 var other = null;
@@ -17,42 +16,42 @@ var deportes = null;
 var juegos = null;
 var tecnologia = null;
 var textInteresError = null;
+var comentarios = null;
+var comentariosError = null;
+var elegirError = null
+var elegir = null;
 
-function myFunction() {
-    var x, text;
+function validarEdad() {
+    edad = document.getElementById("edad").value;
 
-    // Get the value of the input field with id="numb"
-    x = document.getElementById("edad").value;
-
-    // If x is Not a Number or less than one or greater than 10
-    if (isNaN(x) || x < 1 || x > 99) {
-        text = "Input not valid";
+    if (isNaN(edad) || edad < 1 || edad > 99) {
+        errorEdad.innerHTML = "Edad Invalida";
     } else {
-        text = "";
+        errorEdad.innerHTML = "";
     }
-    document.getElementById("edadError").innerHTML = text;
 }
 
-function checkRadio() {
+function validarRadioButtons() {
     men = document.getElementById("masculino").checked
     women = document.getElementById("femenino").checked
     other = document.getElementById("otro").checked
-    textS = sexoError = document.getElementById("sexoError")
+    sexoError = document.getElementById("sexoError")
+
     if (men === false && women === false && other === false) {
-        textS.innerHTML = "Debe seleccionar un sexo"
+        sexoError.innerHTML = "Debe seleccionar un sexo"
         false
     } else {
-        textS.innerHTML = ""
+        sexoError.innerHTML = ""
     }
 }
 
-function checkCheckbox() {
+function validarCheckboxs() {
     musica = document.getElementById("musica").checked
     deportes = document.getElementById("deportes").checked
     juegos = document.getElementById("juegos").checked
     tecnologia = document.getElementById("tecnologia").checked
-
     textInteresError = document.getElementById("interesError")
+
     if (musica === false && deportes === false && juegos === false && tecnologia === false) {
         textInteresError.innerHTML = "Debe seleccionar un interes"
     } else {
@@ -60,41 +59,45 @@ function checkCheckbox() {
     }
 }
 
-var sendForm = function () {
+
+var enviarFormulario = function () {
 
     if (nombreUsuario.value === "") {
-        nombreUsuarioError.innerHTML = "El campo se encuentra incompleto, por favor completalo."
+        nombreUsuarioError.innerHTML = "Campo Incompleto."
     } else {
         nombreUsuarioError.innerHTML = ''
     }
     if (apellidoUsuario.value === "") {
-        apellidoUsuarioError.innerHTML = "El Apellido se encuentra vacio, por favor completalo."
+        apellidoUsuarioError.innerHTML = "Campo Incompleto."
     } else {
         apellidoUsuarioError.innerHTML = ''
     }
-    myFunction()
-    checkRadio()
-    checkCheckbox()
+    if (comentarios.value.length < 15) {
+        comentariosError.innerHTML = 'El comentario debe tener al menos 15 caracteres'
+    } else {
+        comentariosError.innerHTML = ''
+    }
+    validarEdad()
+    validarRadioButtons()
+    validarCheckboxs()
+    checkCountry()
     return false
 }
 
 
-
-
-
 window.onload = function () {
-
+    //Selecciono todos los elementos, por ID, para poder utilizarlos en mi codigo javascript.
     nombreUsuario = document.getElementById('nombre')
-    apellidoUsuario = document.getElementById('apellido')
-    botonEnviar = document.getElementById('enviar')
-    botonEnviar.onclick = sendForm
     nombreUsuarioError = document.getElementById('nombreError')
+    apellidoUsuario = document.getElementById('apellido')
     apellidoUsuarioError = document.getElementById('apellidoError')
-    email = this.document.getElementById('email')
-    x = document.getElementById("edad").value;
-    man = document.getElementById("masculino").checked
-    women = document.getElementById("femenino").checked
-    other = document.getElementById("otro").checked;
-
+    edad = document.getElementById("edad").value;
+    errorEdad = document.getElementById('edadError')
+    email = document.getElementById('email').value
+    elegir = document.getElementById('pais').value
+    elegirError = document.getElementById('elegirError')
+    comentarios = document.getElementById('comentarios')
+    comentariosError = document.getElementById('comentariosError')
+    botonEnviar = document.getElementById('enviar')
+    botonEnviar.onclick = enviarFormulario
 }
-
