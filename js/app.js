@@ -1,25 +1,3 @@
-var botonEnviar = null;
-var nombreUsuario = null;
-var nombreUsuarioError = null;
-var apellidoUsuario = null;
-var apellidoUsuarioError = null;
-var email = null;
-var emailError = null;
-var expesion = null;
-var edad = null;
-var man = null;
-var woman = null;
-var other = null;
-var sexoError = null;
-var musica = null;
-var deportes = null;
-var juegos = null;
-var tecnologia = null;
-var textInteresError = null;
-var comentarios = null;
-var comentariosError = null;
-var elegirError = null
-var elegir = null;
 var pattern = /^[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)*@[a-z0-9]+(\-[a-z0-9]+)*(\.[a-z0-9]+(\-[a-z0-9]+)*)*\.[a-z]{2,4}$/;
 
 /*Funcion para validar nombre, si el lenght del input es 1 o 2, te indica Nombre corto, si esta vacio te dice campo incompleto

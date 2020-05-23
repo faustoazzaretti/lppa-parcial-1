@@ -23,7 +23,7 @@
     padding: 5px;
 }
 
-.izquierda {
+.form-left {
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -32,25 +32,21 @@
     width: 40%;
 }
 
-.name,.apellido,.email,.edad,.sexo,.temas-interes,  
-.pais,.comentarios{
+.name,.lastName,.email,.age,.sex,.topic-interest,  
+.country,.comments{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin:5px;
 }
 
-.derecha {
+.form-right {
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: flex-start;
     height: 80%;
     width: 40%;
-}
-
-.derecha label {
-    margin-top: 10px;
 }
 
 .form label h1 {
@@ -65,13 +61,7 @@
     border: none;
 }
 
-#comentarios {
-    margin: 7px;
-    border-radius: 2px;
-    border: none;
-}
-
-.form .derecha button {
+.form .form-right    button {
     margin: 7px;
     margin-top: 50px;
     border-radius: 2px;
@@ -98,14 +88,20 @@
         height: auto;
         width: 50%;
     }
-    .derecha,.izquierda{
+    .form-left,.form-right{
         width: 80%;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
     }
-    .form .derecha button {
+    .form .form-right button {
         border: 2px solid yellow;
     }
-    
+    .comments textarea {
+        display: flex; 
+        height: 50px;
+        color: blue;
+        justify-content: center;
+        margin-left: 50px;
+    }
 }
 
