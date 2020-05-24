@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Parcial 1 - LPPA</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
         <link rel="stylesheet" href="./css/style.css">
         <script src="./js/app.js"></script>
@@ -14,7 +14,7 @@
             <div class="form">
                 <div class="left-form">
                     <h2>Registro:</h2>
-                    <form>
+                    <form autocomplete="off">
                         <div class="name">
                             <label>Nombre</label>
                             <input id="nombre" type="text">
@@ -66,6 +66,7 @@
                         <div class="country">
                             <label>Pais</label>
                             <select name="paises" id="pais">
+                                <option id="select" value="select">Seleccionar</option>
                                 <option id="argentina" value="argentina">Argentina</option>
                                 <option id="chile" value="chile">Chile</option>
                                 <option id="brasil" value="brasil">Brasil</option>

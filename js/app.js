@@ -71,6 +71,14 @@ function validarComentario() {
     }
 }
 
+function validarPais() {
+    if (select.selected === true) {
+        elegirError.innerHTML = "Seleccione un pais"
+    } else {
+        elegirError.innerHTML = ""
+    }
+}
+
 /*Funcion para mostrar los datos en la consola*/
 function mostrarDatos() {
     console.log('Nombre: ' + nombreUsuario.value)
@@ -97,7 +105,23 @@ function mostrarDatos() {
     if (tecnologia.checked === true) {
         console.log('Tecnologia')
     }
+    if (select.selected === true) {
+        console.log("Pais :")
+    }
+    if (argentina.selected === true) {
+        console.log("Pais : Argentina")
+    }
+    if (chile.selected === true) {
+        console.log("Pais : Chile")
+    }
+    if (brasil.selected === true) {
+        console.log("Pais : Brasil")
+    }
+    if (uruguay.selected === true) {
+        console.log("Pais : Uruguay")
+    }
     console.log('Comentarios: ' + comentarios.value)
+
 }
 
 /*Funcion para enviar formulario, se va a ejecutar cuando el usuario hace click en el boton*/
@@ -109,6 +133,7 @@ var enviarFormulario = function () {
     validarEdad()
     validarSexo()
     validarInteres()
+    validarPais()
     validarComentario()
     mostrarDatos()
     return false
@@ -140,4 +165,9 @@ window.onload = function () {
     comentariosError = document.getElementById('comentariosError')
     botonEnviar = document.getElementById('enviar')
     botonEnviar.onclick = enviarFormulario
+    argentina = document.getElementById('argentina')
+    brasil = document.getElementById('brasil')
+    chile = document.getElementById('chile')
+    uruguay = document.getElementById('uruguay')
+    select = document.getElementById('select')
 }
