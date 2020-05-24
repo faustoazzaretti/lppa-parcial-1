@@ -4,87 +4,84 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>LPPA-PARCIAL</title>
-        <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Josefin+Sans&display=swap"
-            rel="stylesheet">
+        <title>Document</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
-        <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,700&display=swap"
-            rel="stylesheet">
         <link rel="stylesheet" href="./css/style.css">
         <script src="./js/app.js"></script>
     </head>
     <body>
         <div class="wrapper">
             <div class="form">
-                <div class="form-left">
-                    <label>
-                        <h1>Registro:</h1>
-                    </label>
-                    <div class="name">
-                        <label>Nombre:</label>
-                        <input id="nombre" type="text">
-                        <p id="nombreError" class="error"></p>
-                    </div>
-                    <div class="lastName">
-                        <label>Apellido:</label>
-                        <input id="apellido" type="text">
-                        <p id="apellidoError" class="error"></p>
-                    </div>
-                    <div class="email">
-                        <label>Email:</label>
-                        <input id="email" type="text">
-                        <p id="emailError" class="error"></p>
-                    </div>
-                    <div class="age">
-                        <label>Edad:</label>
-                        <input id="edad" type="text">
-                        <p id="edadError" class="error"></p>
-                    </div>
-                    <div class="sex">
-                        <form action="">
-                            <label>Sexo:</label><br>
-                            <input type="radio" id="masculino" name="gender" value="masculino">
-                            <label for="male">Masculino</label><br>
-                            <input type="radio" id="femenino" name="gender" value="femenino">
-                            <label for="female">Femenino</label><br>
-                            <input type="radio" id="otro" name="gender" value="otro">
-                            <label for="other">Otro</label>
-                            <p id="sexoError" class="error"></p>
-                        </form>
-                    </div>
+                <div class="left-form">
+                    <h2>Registro:</h2>
+                    <form>
+                        <div class="name">
+                            <label>Nombre</label>
+                            <input id="nombre" type="text">
+                            <p id="nombreError" class="error"></p>
+                        </div>
+                        <div class="lastName">
+                            <label>Apellido</label>
+                            <input id="apellido" type="text">
+                            <p id="apellidoError" class="error"></p>
+                        </div>
+                        <div class="email">
+                            <label>Email</label>
+                            <input id="email" type="text">
+                            <p id="emailError" class="error"></p>
+                        </div>
+                        <div class="age">
+                            <label>Edad</label>
+                            <input id="edad" type="text">
+                            <p id="edadError" class="error"></p>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-right">
-                    <div class="topic-interest">
-                        <label>Tema de interes:</label>
-                        <form>
-                            <input type="checkbox" id="musica" name="interes" value="musica">
-                            <label>Musica</label><br>
-                            <input type="checkbox" id="deportes" name="interes" value="deportes">
-                            <label>Deportes</label><br>
-                            <input type="checkbox" id="juegos" name="interes" value="juegos">
-                            <label>Juegos</label><br>
-                            <input type="checkbox" id="tecnologia" name="interes" value="tecnologia">
-                            <label>Tecnologia</label>
-                            <p id="interesError" class="error"></p>
-                        </form>
-                    </div>
-                    <div class="country">
-                        <label>Pais:</label>
-                        <select name="paises" id="pais">
-                            <option id="argentina" value="argentina">Argentina</option>
-                            <option id="chile" value="chile">Chile</option>
-                            <option id="brasil" value="brasil">Brasil</option>
-                            <option id="uruguay" value="uruguay">Uruguay</option>
-                        </select>
-                        <p id="elegirError" class="error"></p>
-                    </div>
-                    <div class="comments">
-                        <label>Comentarios:</label>
-                        <textarea id="comentarios" rows="2" cols="15"></textarea>
-                        <p id="comentariosError" class="error"></p>
-                    </div>
-                    <button id="enviar" type="submit" onclick='return enviarFormulario();'>Enviar</button>
+                <div class="right-form">
+                    <form>
+                        <div class="inline">
+                            <div class="sex">
+                                <label>Sexo</label><br>
+                                <input type="radio" id="masculino" name="gender" value="masculino">
+                                <label for="male">Masculino</label><br>
+                                <input type="radio" id="femenino" name="gender" value="femenino">
+                                <label for="female">Femenino</label><br>
+                                <input type="radio" id="otro" name="gender" value="otro">
+                                <label for="other">Otro</label>
+                                <p id="sexoError" class="error"></p>
+                            </div>
+                            <div class="topic-interest">
+                                <label>Tema de interes:</label><br>
+                                <input type="checkbox" id="musica" name="interes" value="musica">
+                                <label>Musica</label><br>
+                                <input type="checkbox" id="deportes" name="interes" value="deportes">
+                                <label>Deportes</label><br>
+                                <input type="checkbox" id="juegos" name="interes" value="juegos">
+                                <label>Juegos</label><br>
+                                <input type="checkbox" id="tecnologia" name="interes" value="tecnologia">
+                                <label>Tecnologia</label><br><br>
+                                <p id="interesError" class="error"></p>
+                            </div>
+                        </div>
+                        <div class="country">
+                            <label>Pais</label>
+                            <select name="paises" id="pais">
+                                <option id="argentina" value="argentina">Argentina</option>
+                                <option id="chile" value="chile">Chile</option>
+                                <option id="brasil" value="brasil">Brasil</option>
+                                <option id="uruguay" value="uruguay">Uruguay</option>
+                            </select>
+                            <p id="elegirError" class="error"></p>
+                        </div>
+                        <div class="comments">
+                            <label>Comentarios</label>
+                            <textarea id="comentarios" rows="3" cols="30"></textarea>
+                            <p id="comentariosError" class="error"></p>
+                        </div>
+                    </form>
                 </div>
+                <button id="enviar" type="submit" onclick='return enviarFormulario();'>Enviar</button>
             </div>
+        </div>
     </body>
 </html>
