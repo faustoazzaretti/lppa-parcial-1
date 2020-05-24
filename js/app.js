@@ -1,41 +1,31 @@
-var pattern = /^[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)*@[a-z0-9]+(\-[a-z0-9]+)*(\.[a-z0-9]+(\-[a-z0-9]+)*)*\.[a-z]{2,4}$/;
-
 /*Funcion para validar nombre, si el lenght del input es 1 o 2, te indica Nombre corto, si esta vacio te dice campo incompleto
 y si el nombre es correcto no muestra ningun error*/
-function validarNombre() {
-    if (nombreUsuario.value.length < 3 && nombreUsuario.value.length > 0) {
-        nombreUsuarioError.innerHTML = "Nombre demasiado corto."
-    } else if (nombreUsuario.value.length === 0) {
-        nombreUsuarioError.innerHTML = 'Campo Incompleto'
+function validateName() {
+    if (userName.value.length < 3 && userName.value.length > 0) {
+        userName.innerHTML = "Nombre demasiado corto."
+    } else if (userName.value.length === 0) {
+        userNameError.innerHTML = 'Campo Incompleto'
     } else {
-        nombreUsuarioError.innerHTML = ''
+        userNameError.innerHTML = ''
     }
 }
 
 /*Funcion para validar apellido, si el lenght del input es 1 o 2, te indica Nombre corto, si esta vacio te dice campo incompleto
 y si el nombre es correcto no muestra ningun error*/
-function validarApellido() {
-    if (apellidoUsuario.value.length < 3 && apellidoUsuario.value.length > 0) {
-        apellidoUsuarioError.innerHTML = "Apellido demasiado corto."
-    } else if (apellidoUsuario.value.length === 0) {
-        apellidoUsuarioError.innerHTML = 'Campo Incompleto'
+function validateSurname() {
+    if (lastName.value.length < 3 && lastName.value.length > 0) {
+        lastName.innerHTML = "Apellido demasiado corto."
+    } else if (lastName.value.length === 0) {
+        lastNameError.innerHTML = 'Campo Incompleto'
     } else {
-        apellidoUsuarioError.innerHTML = ''
-    }
-}
-
-/*Funcion para validad edad, si no es un numero, o la edad es menor que 0 y mayor que 99 te indica el error*/
-function validarEdad() {
-    if (isNaN(edad.value) || edad.value < 1 || edad.value > 99) {
-        errorEdad.innerHTML = "Edad Invalida";
-    } else {
-        errorEdad.innerHTML = "";
+        lastNameError.innerHTML = ''
     }
 }
 
 /*Funcion para validad email, hace un test, el test hace la comparacion entre mi expresion regular llamada pattern,
 y con el value del email que ingrese, si es correcto devuelve true de lo contrario muestra el error.*/
 function validateEmail() {
+    var pattern = /^[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)*@[a-z0-9]+(\-[a-z0-9]+)*(\.[a-z0-9]+(\-[a-z0-9]+)*)*\.[a-z]{2,4}$/;
     if (pattern.test(email.value)) {
         emailError.innerHTML = ""
     } else {
@@ -43,48 +33,63 @@ function validateEmail() {
     }
 }
 
+/*Funcion para validad edad, si no es un numero, o la edad es menor que 0 y mayor que 99 te indica el error*/
+function validateAge() {
+    if (isNaN(age.value) || age.value < 1 || age.value > 99) {
+        ageError.innerHTML = "Edad Invalida";
+    } else {
+        ageError.innerHTML = "";
+    }
+}
+
+
+
 /*Funcion para sexo, comprueba si todos los radiobuttons estan sin checkear muestra error para que puedas seleccionar uno*/
-function validarSexo() {
+function validateSex() {
     if (men.checked === false && women.checked === false && other.checked === false) {
-        sexoError.innerHTML = "Debe seleccionar un sexo"
+        sexError.innerHTML = "Debe seleccionar un sexo"
         false
     } else {
-        sexoError.innerHTML = ""
+        sexError.innerHTML = ""
     }
 }
 
 /*Funcion para validad interes, lo mismo que el de arriba, pero en esta ocasion son checkboxs*/
-function validarInteres() {
-    if (musica.checked === false && deportes.checked === false && juegos.checked === false && tecnologia.checked === false) {
-        textInteresError.innerHTML = "Debe seleccionar un interes"
+function validateInterest() {
+    if (music.checked === false && deports.checked === false && game.checked === false && technology.checked === false) {
+        textInterestError.innerHTML = "Debe seleccionar un interes"
     } else {
-        textInteresError.innerHTML = ""
+        textInterestError.innerHTML = ""
     }
 }
+
+/*Funcion para validar el pais seleccionado, si la opcion seleccionar esta seleccionado muestra el error*/
+function validateCountry() {
+    if (select.selected === true) {
+        chooseError.innerHTML = "Seleccione un pais"
+    } else {
+        chooseError.innerHTML = ""
+    }
+}
+
 
 /*Funcion para comentario, en este caso si el lenght es menor que 15 te indica el error para que lo completes*/
-function validarComentario() {
-    if (comentarios.value.length < 15) {
-        comentariosError.innerHTML = 'El comentario debe tener al menos 15 caracteres'
+function validateComment() {
+    if (comments.value.length < 15) {
+        commentsError.innerHTML = 'El comentario debe tener al menos 15 caracteres'
     } else {
-        comentariosError.innerHTML = ''
+        commentsError.innerHTML = ''
     }
 }
 
-function validarPais() {
-    if (select.selected === true) {
-        elegirError.innerHTML = "Seleccione un pais"
-    } else {
-        elegirError.innerHTML = ""
-    }
-}
+
 
 /*Funcion para mostrar los datos en la consola*/
-function mostrarDatos() {
-    console.log('Nombre: ' + nombreUsuario.value)
-    console.log('Apellido: ' + apellidoUsuario.value)
+function showDate() {
+    console.log('Nombre: ' + userName.value)
+    console.log('Apellido: ' + lastName.value)
     console.log('Email :' + email.value)
-    console.log('Edad : ' + edad.value)
+    console.log('Edad : ' + age.value)
     if (men.checked === true) {
         console.log('Sexo: Masculino')
     } else if (women.checked === true) {
@@ -93,16 +98,16 @@ function mostrarDatos() {
         console.log('Sexo:  Otro')
     }
     console.log('Temas de interes:')
-    if (musica.checked === true) {
+    if (music.checked === true) {
         console.log("Musica")
     }
-    if (deportes.checked === true) {
+    if (deports.checked === true) {
         console.log('Deportes')
     }
-    if (juegos.checked === true) {
+    if (game.checked === true) {
         console.log('Juegos')
     }
-    if (tecnologia.checked === true) {
+    if (technology.checked === true) {
         console.log('Tecnologia')
     }
     if (select.selected === true) {
@@ -120,54 +125,60 @@ function mostrarDatos() {
     if (uruguay.selected === true) {
         console.log("Pais : Uruguay")
     }
-    console.log('Comentarios: ' + comentarios.value)
+    console.log('Comentarios: ' + comments.value)
 
 }
 
+function cleanInputs() {
+    userName.value
+}
+
 /*Funcion para enviar formulario, se va a ejecutar cuando el usuario hace click en el boton*/
-var enviarFormulario = function () {
+var sendForm = function () {
     console.clear()
-    validarNombre()
-    validarApellido()
+    validateName()
+    validateSurname()
     validateEmail()
-    validarEdad()
-    validarSexo()
-    validarInteres()
-    validarPais()
-    validarComentario()
-    mostrarDatos()
+    validateAge()
+    validateSex()
+    validateInterest()
+    validateCountry()
+    validateComment()
+    showDate()
     return false
 }
 
 
 window.onload = function () {
     //Selecciono todos los elementos, por ID, para poder utilizarlos en mi codigo javascript.
-    nombreUsuario = document.getElementById('nombre')
-    nombreUsuarioError = document.getElementById('nombreError')
-    apellidoUsuario = document.getElementById('apellido')
-    apellidoUsuarioError = document.getElementById('apellidoError')
-    edad = document.getElementById("edad");
-    errorEdad = document.getElementById('edadError')
+    userName = document.getElementById('name')
+    lastName = document.getElementById('lastName')
+    age = document.getElementById("age");
     email = document.getElementById('email')
-    emailError = document.getElementById('emailError')
-    men = document.getElementById("masculino")
-    women = document.getElementById("femenino")
-    other = document.getElementById("otro")
-    sexoError = document.getElementById("sexoError")
-    musica = document.getElementById("musica")
-    deportes = document.getElementById("deportes")
-    juegos = document.getElementById("juegos")
-    tecnologia = document.getElementById("tecnologia")
-    textInteresError = document.getElementById("interesError")
-    elegir = document.getElementById('pais').value
-    elegirError = document.getElementById('elegirError')
-    comentarios = document.getElementById('comentarios')
-    comentariosError = document.getElementById('comentariosError')
-    botonEnviar = document.getElementById('enviar')
-    botonEnviar.onclick = enviarFormulario
+    men = document.getElementById("men")
+    women = document.getElementById("women")
+    other = document.getElementById("other")
+    music = document.getElementById("music")
+    deports = document.getElementById("deports")
+    game = document.getElementById("game")
+    technology = document.getElementById("technology")
+    choose = document.getElementById('choose').value
     argentina = document.getElementById('argentina')
     brasil = document.getElementById('brasil')
     chile = document.getElementById('chile')
     uruguay = document.getElementById('uruguay')
     select = document.getElementById('select')
+    comments = document.getElementById('comentarios')
+    sendButton = document.getElementById('send')
+    //Selecciono todos los id del parrafo error para poder mostrar el mensaje de ingrese el valor.
+    userNameError = document.getElementById('nameError')
+    lastNameError = document.getElementById('lastNameError')
+    ageError = document.getElementById('ageError')
+    emailError = document.getElementById('emailError')
+    sexError = document.getElementById("sexError")
+    textInterestError = document.getElementById("interestError")
+    chooseError = document.getElementById('chooseError')
+    commentsError = document.getElementById('commentsError')
+    //Evento boton enviar.
+    sendButton.onclick = sendForm
 }
