@@ -154,8 +154,9 @@ button:hover {
     .sex .error {
         margin-top: 10px;
     }
+
     .sex,.topic-interest {
-    width: 50%;
+        width: 80%;
     }
 
     button {
