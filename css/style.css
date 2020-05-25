@@ -8,7 +8,7 @@
     color: white;
 }
 
-.form {
+form {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,13 +17,6 @@
     width: 80vw;
     border: 1px dashed white;
     font-family: 'Titillium Web', sans-serif
-}
-
-.left-form form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
 }
 
 .left-form,.right-form {
@@ -35,29 +28,36 @@
     height: 80%;
 }
 
-.name,.lastName,.email,.age,.country,.comments{
-    display: flex;
-    flex-direction: column;
-    height: 70px;
-    width: 60%;
-    margin: 5px 10px 0 5px;
+.left-form h2 {
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 25px;
 }
 
-.form .left-form label,.form .right-form label{
+.left-form label,.right-form label {
     margin: 5px;
     font-weight: bold;
 }
 
-.form .left-form input[type="text"],.form .right-form input[type="text"]{
+.name,.lastName,.email,.age,.country,.comments { 
+    display: flex; 
+    flex-direction: column;
+    height: 70px;
+    width: 75%;
+    margin: 5px 10px 0 5px;
+}
+
+.left-form input[type="text"],.right-form input[type="text"] {
     border: none;
-    margin: 5px;
+    margin: 4px 0 4px 0;
     height: 60px;
     background-color: #222222;
     color: white;
     font-size: 13px;
+    border-radius: 2px;
 }
 
-.form input[type="text"]:hover,.comments textarea:hover{
+input[type="text"]:hover,.comments textarea:hover {
     background-color: grey;
     cursor: pointer;
 }
@@ -72,16 +72,7 @@
     margin-right: 2.5%;
 }
 
-.form .right-form form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 80%;
-}
-
-.right-form form label{
+.right-form form label {
     margin: 20px;
 }
 
@@ -93,19 +84,22 @@
 
 .inline {
     display: flex;
-    margin: 10px;
+    justify-content: center;
+    width: 100%;    
 }
 
-.inline .sex {
-    margin-right: 30px;
+.sex,.topic-interest {
+    width: 40%;
+
 }
-.sex,.topic-interest{
+
+.sex,.topic-interest {
     height: 120px;
     font-size: 13px;
 }
 
 .sex .error {
-    margin: 38.5px 0 0 5px;
+    margin-top: 33px;
 }
 
 .comments {
@@ -114,13 +108,14 @@
     align-items: center;
     width: 100%;
 }
+
 .comments textarea {
     background-color: #222222;
     border: none;
     color: #ccc;
 }
 
-.form button {
+button {
     background-color: #ccc;
     color: #222222;
     width: 100px;
@@ -131,7 +126,7 @@
     letter-spacing: 1px;
 }
 
-.form button:hover {
+button:hover {
     background-color: #222222;
     color: #ccc;
 }
@@ -139,27 +134,32 @@
 @media (max-width: 720px) {
     .wrapper {
         height: auto;
+        
     }
-    .form {
-        flex-direction: column;     
-    }
+
     .right-form,.left-form{
         width: 80%;
     }
+
     .left-form h2 {
         margin-top: 15px;
         margin-bottom: 20px;
     }
+
     .inline {
-        display: flex;  
         flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
     }
+
     .sex .error {
-    margin-top: 10px;
+        margin-top: 10px;
     }
-    .form button {
-    margin-top: 50px;
-    margin-bottom: 15px;
-}
+
+    button {
+        margin-top: 50px;
+        margin-bottom: 15px;
+        width: 150px;
+    }
 }
 

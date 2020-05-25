@@ -11,78 +11,74 @@
     </head>
     <body>
         <div class="wrapper">
-            <div class="form">
+            <form autocomplete="off">
                 <div class="left-form">
                     <h2>Registro:</h2>
-                    <form autocomplete="off">
-                        <div class="name">
-                            <label for="">Nombre</label>
-                            <input id="name" type="text" name="name">
-                            <p id="nameError" class="error"></p>
-                        </div>
-                        <div class="lastName">
-                            <label for="lastName">Apellido</label>
-                            <input id="lastName" type="text" name="lastName">
-                            <p id="lastNameError" class="error"></p>
-                        </div>
-                        <div class="email">
-                            <label for="email">Email</label>
-                            <input id="email" type="text" name="email">
-                            <p id="emailError" class="error"></p>
-                        </div>
-                        <div class="age">
-                            <label for="age">Edad</label>
-                            <input id="age" type="text" name="age">
-                            <p id="ageError" class="error"></p>
-                        </div>
-                    </form>
+                    <div class="name">
+                        <label for="">Nombre</label>
+                        <input id="name" type="text" name="name">
+                        <p id="nameError" class="error"></p>
+                    </div>
+                    <div class="lastName">
+                        <label for="lastName">Apellido</label>
+                        <input id="lastName" type="text" name="lastName">
+                        <p id="lastNameError" class="error"></p>
+                    </div>
+                    <div class="email">
+                        <label for="email">Email</label>
+                        <input id="email" type="text" name="email">
+                        <p id="emailError" class="error"></p>
+                    </div>
+                    <div class="age">
+                        <label for="age">Edad</label>
+                        <input id="age" type="text" name="age">
+                        <p id="ageError" class="error"></p>
+                    </div>
                 </div>
                 <div class="right-form">
-                    <form>
-                        <div class="inline">
-                            <div class="sex">
-                                <label for="gender">Sexo</label><br>
-                                <input id="men" type="radio" name="gender" value="masculino">
-                                <label for="male">Masculino</label><br>
-                                <input id="women" type="radio" name="gender" value="femenino">
-                                <label for="female">Femenino</label><br>
-                                <input id="other" type="radio" name="gender" value="otro">
-                                <label for="other">Otro</label>
-                                <p id="sexError" class="error"></p>
-                            </div>
-                            <div class="topic-interest">
-                                <label for="interes">Tema de interes:</label><br>
-                                <input id="music" type="checkbox" name="interes" value="musica">
-                                <label for="interes">Musica</label><br>
-                                <input id="deports" type="checkbox" name="interes" value="deportes">
-                                <label for="interes">Deportes</label><br>
-                                <input id="game" type="checkbox" name="interes" value="juegos">
-                                <label for="interes">Juegos</label><br>
-                                <input id="technology" type="checkbox" name="interes" value="tecnologia">
-                                <label for="interes">Tecnologia</label><br><br>
-                                <p id="interestError" class="error"></p>
-                            </div>
+                    <div class="inline">
+                        <div class="sex">
+                            <label for="gender">Sexo</label><br>
+                            <input id="men" type="radio" name="gender" value="masculino">
+                            <label for="male">Masculino</label><br>
+                            <input id="women" type="radio" name="gender" value="femenino">
+                            <label for="female">Femenino</label><br>
+                            <input id="other" type="radio" name="gender" value="otro">
+                            <label for="other">Otro</label>
+                            <p id="sexError" class="error"></p>
                         </div>
-                        <div class="country">
-                            <label for="pickCountry">Pais</label>
-                            <select name="paises" id="choose">
-                                <option id="select" name="pickCountry" value="select">Seleccionar</option>
-                                <option id="argentina" name="pickCountry" value="argentina">Argentina</option>
-                                <option id="chile" name="pickCountry" value="chile">Chile</option>
-                                <option id="brasil" name="pickCountry" value="brasil">Brasil</option>
-                                <option id="uruguay" name="pickCountry" value="uruguay">Uruguay</option>
-                            </select>
-                            <p id="chooseError" class="error"></p>
+                        <div class="topic-interest">
+                            <label for="interes">Tema de interes:</label><br>
+                            <input id="music" type="checkbox" name="interes" value="musica">
+                            <label for="interes">Musica</label><br>
+                            <input id="deports" type="checkbox" name="interes" value="deportes">
+                            <label for="interes">Deportes</label><br>
+                            <input id="game" type="checkbox" name="interes" value="juegos">
+                            <label for="interes">Juegos</label><br>
+                            <input id="technology" type="checkbox" name="interes" value="tecnologia">
+                            <label for="interes">Tecnologia</label><br><br>
+                            <p id="interestError" class="error"></p>
                         </div>
-                        <div class="comments">
-                            <label for="comentts">Comentarios</label>
-                            <textarea id="comentarios" name="comentts" rows="3" cols="30"></textarea>
-                            <p id="commentsError" class="error"></p>
-                        </div>
-                    </form>
+                    </div>
+                    <div class="country">
+                        <label for="pickCountry">Pais</label>
+                        <select name="paises" id="choose">
+                            <option id="select" name="pickCountry" value="select">Seleccionar</option>
+                            <option id="argentina" name="pickCountry" value="argentina">Argentina</option>
+                            <option id="chile" name="pickCountry" value="chile">Chile</option>
+                            <option id="brasil" name="pickCountry" value="brasil">Brasil</option>
+                            <option id="uruguay" name="pickCountry" value="uruguay">Uruguay</option>
+                        </select>
+                        <p id="chooseError" class="error"></p>
+                    </div>
+                    <div class="comments">
+                        <label for="comentts">Comentarios</label>
+                        <textarea id="comentarios" name="comentts" rows="3" cols="30"></textarea>
+                        <p id="commentsError" class="error"></p>
+                    </div>
                 </div>
                 <button id="send" type="submit" onclick='return enviarFormulario();'>Enviar</button>
-            </div>
+            </form>
         </div>
     </body>
 </html>

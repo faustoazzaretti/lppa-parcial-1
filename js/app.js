@@ -2,11 +2,14 @@
 y si el nombre es correcto no muestra ningun error*/
 function validateName() {
     if (userName.value.length < 3 && userName.value.length > 0) {
-        userName.innerHTML = "Nombre demasiado corto."
+        userName.innerHTML = 'Nombre demasiado corto.'
+        completeUsername = false
     } else if (userName.value.length === 0) {
-        userNameError.innerHTML = 'Campo Incompleto'
+        userNameError.innerHTML = 'Campo Incompleto.'
+        completeUsername = false
     } else {
         userNameError.innerHTML = ''
+        completeUsername = true
     }
 }
 
@@ -14,11 +17,14 @@ function validateName() {
 y si el nombre es correcto no muestra ningun error*/
 function validateSurname() {
     if (lastName.value.length < 3 && lastName.value.length > 0) {
-        lastName.innerHTML = "Apellido demasiado corto."
+        lastName.innerHTML = 'Apellido demasiado corto.'
+        completeLastName = false
     } else if (lastName.value.length === 0) {
         lastNameError.innerHTML = 'Campo Incompleto'
+        completeLastName = false
     } else {
         lastNameError.innerHTML = ''
+        completeLastName = true
     }
 }
 
@@ -27,62 +33,68 @@ y con el value del email que ingrese, si es correcto devuelve true de lo contrar
 function validateEmail() {
     var pattern = /^[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)*@[a-z0-9]+(\-[a-z0-9]+)*(\.[a-z0-9]+(\-[a-z0-9]+)*)*\.[a-z]{2,4}$/;
     if (pattern.test(email.value)) {
-        emailError.innerHTML = ""
+        emailError.innerHTML = ''
+        completeEmail = true
     } else {
-        emailError.innerHTML = "Formato de email incorrecto"
+        emailError.innerHTML = 'Formato de email incorrecto'
+        completeEmail = false
     }
 }
 
 /*Funcion para validad edad, si no es un numero, o la edad es menor que 0 y mayor que 99 te indica el error*/
 function validateAge() {
     if (isNaN(age.value) || age.value < 1 || age.value > 99) {
-        ageError.innerHTML = "Edad Invalida";
+        ageError.innerHTML = 'Edad Invalida'
+        completeAge = false
     } else {
-        ageError.innerHTML = "";
+        ageError.innerHTML = ''
+        completeAge = true
     }
 }
-
-
 
 /*Funcion para sexo, comprueba si todos los radiobuttons estan sin checkear muestra error para que puedas seleccionar uno*/
 function validateSex() {
     if (men.checked === false && women.checked === false && other.checked === false) {
-        sexError.innerHTML = "Debe seleccionar un sexo"
-        false
+        sexError.innerHTML = 'Debe seleccionar un sexo'
+        completeSex = false;
     } else {
-        sexError.innerHTML = ""
+        sexError.innerHTML = ''
+        completeSex = true
     }
 }
 
 /*Funcion para validad interes, lo mismo que el de arriba, pero en esta ocasion son checkboxs*/
 function validateInterest() {
     if (music.checked === false && deports.checked === false && game.checked === false && technology.checked === false) {
-        textInterestError.innerHTML = "Debe seleccionar un interes"
+        textInterestError.innerHTML = 'Debe seleccionar un interes'
+        completeInterest = false
     } else {
-        textInterestError.innerHTML = ""
+        textInterestError.innerHTML = ''
+        completeInterest = true
     }
 }
 
 /*Funcion para validar el pais seleccionado, si la opcion seleccionar esta seleccionado muestra el error*/
 function validateCountry() {
     if (select.selected === true) {
-        chooseError.innerHTML = "Seleccione un pais"
+        chooseError.innerHTML = 'Seleccione un pais'
+        completeCountry = false
     } else {
-        chooseError.innerHTML = ""
+        chooseError.innerHTML = ''
+        completeCountry = true
     }
 }
-
 
 /*Funcion para comentario, en este caso si el lenght es menor que 15 te indica el error para que lo completes*/
 function validateComment() {
     if (comments.value.length < 15) {
         commentsError.innerHTML = 'El comentario debe tener al menos 15 caracteres'
+        completeComments = false
     } else {
         commentsError.innerHTML = ''
+        completeComments = true
     }
 }
-
-
 
 /*Funcion para mostrar los datos en la consola*/
 function showDate() {
@@ -95,7 +107,7 @@ function showDate() {
     } else if (women.checked === true) {
         console.log('Sexo: Femenino')
     } else if (other.checked === true) {
-        console.log('Sexo:  Otro')
+        console.log('Sexo: Otro')
     }
     console.log('Temas de interes:')
     if (music.checked === true) {
@@ -111,31 +123,50 @@ function showDate() {
         console.log('Tecnologia')
     }
     if (select.selected === true) {
-        console.log("Pais :")
+        console.log('Pais :')
     }
     if (argentina.selected === true) {
-        console.log("Pais : Argentina")
+        console.log('Pais : Argentina')
     }
     if (chile.selected === true) {
-        console.log("Pais : Chile")
+        console.log('Pais : Chile')
     }
     if (brasil.selected === true) {
-        console.log("Pais : Brasil")
+        console.log('Pais : Brasil')
     }
     if (uruguay.selected === true) {
-        console.log("Pais : Uruguay")
+        console.log('Pais : Uruguay')
     }
     console.log('Comentarios: ' + comments.value)
 
 }
 
+/*Function para limpiar inputs, cree un bool en cada validacion para saber su estado.
+ Si es true, y todas son true, limpia los inputs, y muestra en consola a la funcion showdata*/
 function cleanInputs() {
-    userName.value
+    if (completeUsername === true && completeLastName === true && completeEmail === true && completeAge === true && completeSex === true && completeCountry === true && completeComments === true) {
+        showDate()
+        userName.value = ''
+        lastName.value = ''
+        email.value = ''
+        age.value = ''
+        comments.value = ''
+        men.checked = false
+        women.checked = false
+        other.checked = false
+        music.checked = false
+        deports.checked = false
+        game.checked = false
+        technology.selected = false
+        comments.value = ''
+
+    } else {
+        console.log('Para poder ver los datos, debes ingresar todos los campos obligatorios')
+    }
 }
 
 /*Funcion para enviar formulario, se va a ejecutar cuando el usuario hace click en el boton*/
 var sendForm = function () {
-    console.clear()
     validateName()
     validateSurname()
     validateEmail()
@@ -144,7 +175,7 @@ var sendForm = function () {
     validateInterest()
     validateCountry()
     validateComment()
-    showDate()
+    cleanInputs()
     return false
 }
 
