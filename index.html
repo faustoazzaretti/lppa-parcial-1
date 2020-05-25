@@ -10,8 +10,11 @@
         <script src="./js/app.js"></script>
     </head>
     <body>
+        <!--Start Wrapper-->
         <div class="wrapper">
+            <!--Start Form-->
             <form autocomplete="off">
+                <!--Start left-form-->
                 <div class="left-form">
                     <h2>Registro:</h2>
                     <div class="name">
@@ -35,6 +38,8 @@
                         <p id="ageError" class="error"></p>
                     </div>
                 </div>
+                <!--Finish Left Form-->
+                <!--Start Right Form-->
                 <div class="right-form">
                     <div class="inline">
                         <div class="sex">
@@ -77,8 +82,11 @@
                         <p id="commentsError" class="error"></p>
                     </div>
                 </div>
+                <!--Finish Right Form-->
                 <button id="send" type="submit" onclick='return enviarFormulario();'>Enviar</button>
             </form>
+            <!--Finish Form-->
         </div>
+        <!--Finish Wrapper-->
     </body>
 </html>

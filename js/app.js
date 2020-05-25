@@ -3,9 +3,11 @@ y si el nombre es correcto no muestra ningun error*/
 function validateName() {
     if (userName.value.length < 3 && userName.value.length > 0) {
         userName.innerHTML = 'Nombre demasiado corto.'
+        console.log('Nombre demasiado corto')
         completeUsername = false
     } else if (userName.value.length === 0) {
         userNameError.innerHTML = 'Campo Incompleto.'
+        console.log('Nombre demasiado corto')
         completeUsername = false
     } else {
         userNameError.innerHTML = ''
@@ -18,9 +20,11 @@ y si el nombre es correcto no muestra ningun error*/
 function validateSurname() {
     if (lastName.value.length < 3 && lastName.value.length > 0) {
         lastName.innerHTML = 'Apellido demasiado corto.'
+        console.log('Apellido demasiado corto')
         completeLastName = false
     } else if (lastName.value.length === 0) {
         lastNameError.innerHTML = 'Campo Incompleto'
+        console.log('Apellido demasiado corto')
         completeLastName = false
     } else {
         lastNameError.innerHTML = ''
@@ -37,6 +41,7 @@ function validateEmail() {
         completeEmail = true
     } else {
         emailError.innerHTML = 'Formato de email incorrecto'
+        console.log('Formato de email incorrecto')
         completeEmail = false
     }
 }
@@ -45,6 +50,7 @@ function validateEmail() {
 function validateAge() {
     if (isNaN(age.value) || age.value < 1 || age.value > 99) {
         ageError.innerHTML = 'Edad Invalida'
+        console.log('Edad Invalida')
         completeAge = false
     } else {
         ageError.innerHTML = ''
@@ -56,7 +62,8 @@ function validateAge() {
 function validateSex() {
     if (men.checked === false && women.checked === false && other.checked === false) {
         sexError.innerHTML = 'Debe seleccionar un sexo'
-        completeSex = false;
+        console.log('Debe seleccionar un sexo')
+        completeSex = false
     } else {
         sexError.innerHTML = ''
         completeSex = true
@@ -67,6 +74,7 @@ function validateSex() {
 function validateInterest() {
     if (music.checked === false && deports.checked === false && game.checked === false && technology.checked === false) {
         textInterestError.innerHTML = 'Debe seleccionar un interes'
+        console.log('Debe seleccionar un interes')
         completeInterest = false
     } else {
         textInterestError.innerHTML = ''
@@ -78,6 +86,7 @@ function validateInterest() {
 function validateCountry() {
     if (select.selected === true) {
         chooseError.innerHTML = 'Seleccione un pais'
+        console.log('Seleccione un pais')
         completeCountry = false
     } else {
         chooseError.innerHTML = ''
@@ -89,6 +98,7 @@ function validateCountry() {
 function validateComment() {
     if (comments.value.length < 15) {
         commentsError.innerHTML = 'El comentario debe tener al menos 15 caracteres'
+        console.log('El comentario debe tener al menos 15 caracteres')
         completeComments = false
     } else {
         commentsError.innerHTML = ''
@@ -111,7 +121,7 @@ function showDate() {
     }
     console.log('Temas de interes:')
     if (music.checked === true) {
-        console.log("Musica")
+        console.log('Musica')
     }
     if (deports.checked === true) {
         console.log('Deportes')
@@ -159,7 +169,6 @@ function cleanInputs() {
         game.checked = false
         technology.selected = false
         comments.value = ''
-
     } else {
         console.log('Para poder ver los datos, debes ingresar todos los campos obligatorios')
     }
@@ -167,6 +176,7 @@ function cleanInputs() {
 
 /*Funcion para enviar formulario, se va a ejecutar cuando el usuario hace click en el boton*/
 var sendForm = function () {
+    console.clear()
     validateName()
     validateSurname()
     validateEmail()
@@ -184,15 +194,15 @@ window.onload = function () {
     //Selecciono todos los elementos, por ID, para poder utilizarlos en mi codigo javascript.
     userName = document.getElementById('name')
     lastName = document.getElementById('lastName')
-    age = document.getElementById("age");
+    age = document.getElementById('age')
     email = document.getElementById('email')
-    men = document.getElementById("men")
-    women = document.getElementById("women")
-    other = document.getElementById("other")
-    music = document.getElementById("music")
-    deports = document.getElementById("deports")
-    game = document.getElementById("game")
-    technology = document.getElementById("technology")
+    men = document.getElementById('men')
+    women = document.getElementById('women')
+    other = document.getElementById('other')
+    music = document.getElementById('music')
+    deports = document.getElementById('deports')
+    game = document.getElementById('game')
+    technology = document.getElementById('technology')
     choose = document.getElementById('choose').value
     argentina = document.getElementById('argentina')
     brasil = document.getElementById('brasil')
@@ -206,8 +216,8 @@ window.onload = function () {
     lastNameError = document.getElementById('lastNameError')
     ageError = document.getElementById('ageError')
     emailError = document.getElementById('emailError')
-    sexError = document.getElementById("sexError")
-    textInterestError = document.getElementById("interestError")
+    sexError = document.getElementById('sexError')
+    textInterestError = document.getElementById('interestError')
     chooseError = document.getElementById('chooseError')
     commentsError = document.getElementById('commentsError')
     //Evento boton enviar.
