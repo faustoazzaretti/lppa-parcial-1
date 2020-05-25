@@ -90,7 +90,6 @@ input[type="text"]:hover,.comments textarea:hover {
 
 .sex,.topic-interest {
     width: 40%;
-
 }
 
 .sex,.topic-interest {
@@ -154,6 +153,9 @@ button:hover {
 
     .sex .error {
         margin-top: 10px;
+    }
+    .sex,.topic-interest {
+    width: 50%;
     }
 
     button {

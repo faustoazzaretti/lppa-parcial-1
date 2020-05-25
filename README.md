@@ -1,3 +1,3 @@
 # Parcial 1 LPPA
 ## Azzaretti, Fausto.
-###### Try in -> https://faustoazzaretti.github.io/lppa-parcial-1/
+Try [click here](https://faustoazzaretti.github.io/lppa-parcial-1/)
