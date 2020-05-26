@@ -15,10 +15,13 @@
             <!--Start Form-->
             <form autocomplete="off">
                 <!--Start left-form-->
+                <div class="title">
+                    <h2>Registro</h2>
+                </div>
                 <div class="left-form">
-                    <h2>Registro:</h2>
+
                     <div class="name">
-                        <label for="">Nombre</label>
+                        <label for="name">Nombre</label>
                         <input id="name" type="text" name="name">
                         <p id="nameError" class="error"></p>
                     </div>
@@ -53,14 +56,14 @@
                             <p id="sexError" class="error"></p>
                         </div>
                         <div class="topic-interest">
-                            <label for="interes">Tema de interes:</label><br>
-                            <input id="music" type="checkbox" name="interes" value="musica">
+                            <label for="interest">Tema de interes:</label><br>
+                            <input id="music" type="checkbox" name="interest" value="musica">
                             <label for="interes">Musica</label><br>
-                            <input id="deports" type="checkbox" name="interes" value="deportes">
+                            <input id="deports" type="checkbox" name="interest" value="deportes">
                             <label for="interes">Deportes</label><br>
-                            <input id="game" type="checkbox" name="interes" value="juegos">
+                            <input id="game" type="checkbox" name="interest" value="juegos">
                             <label for="interes">Juegos</label><br>
-                            <input id="technology" type="checkbox" name="interes" value="tecnologia">
+                            <input id="technology" type="checkbox" name="interest" value="tecnologia">
                             <label for="interes">Tecnologia</label><br><br>
                             <p id="interestError" class="error"></p>
                         </div>
@@ -83,7 +86,9 @@
                     </div>
                 </div>
                 <!--Finish Right Form-->
-                <button id="send" type="submit" onclick='return enviarFormulario();'>Enviar</button>
+                <div class="button-form">
+                    <button id="send" type="submit" onclick='return enviarFormulario();'>Enviar</button>
+                </div>
             </form>
             <!--Finish Form-->
         </div>
