@@ -70,11 +70,18 @@ form {
     padding: 10px;
 }
 
+.country {
+    height: 80px!important;
+}
+
 input[type="text"]:hover,.comments textarea:hover {
     background-color: grey;
     cursor: pointer;
 }
 
+#choose {
+    height: 30px;
+}
 .error {
     margin: 1px 0 0 5px;
     font-size: 10px;
