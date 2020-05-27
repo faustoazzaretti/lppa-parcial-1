@@ -110,8 +110,8 @@ function validateComment() {
 function showDate() {
     console.log('Nombre: ' + userName.value)
     console.log('Apellido: ' + lastName.value)
-    console.log('Email :' + email.value)
-    console.log('Edad : ' + age.value)
+    console.log('Email:' + email.value)
+    console.log('Edad: ' + age.value)
     if (men.checked === true) {
         console.log('Sexo: Masculino')
     } else if (women.checked === true) {
@@ -133,19 +133,19 @@ function showDate() {
         console.log('Tecnologia')
     }
     if (select.selected === true) {
-        console.log('Pais :')
+        console.log('Pais:')
     }
     if (argentina.selected === true) {
-        console.log('Pais : Argentina')
+        console.log('Pais: Argentina')
     }
     if (chile.selected === true) {
-        console.log('Pais : Chile')
+        console.log('Pais: Chile')
     }
     if (brasil.selected === true) {
-        console.log('Pais : Brasil')
+        console.log('Pais: Brasil')
     }
     if (uruguay.selected === true) {
-        console.log('Pais : Uruguay')
+        console.log('Pais: Uruguay')
     }
     console.log('Comentarios: ' + comments.value)
 

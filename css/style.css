@@ -82,6 +82,7 @@ input[type="text"]:hover,.comments textarea:hover {
 #choose {
     height: 30px;
 }
+
 .error {
     margin: 1px 0 0 5px;
     font-size: 10px;
@@ -102,7 +103,6 @@ input[type="text"]:hover,.comments textarea:hover {
     border: none;
     margin: 4px 0 4px 0;    
 }
-
 
 .inline {
     display: flex;
@@ -170,9 +170,11 @@ button:hover {
         height: auto;
         
     }
+
     .title {
         margin-bottom: 30px;
     }
+
     .right-form,.left-form{
         width: 80%;
     }
